@@ -9,8 +9,8 @@ import { gapi } from 'gapi-script';
 })
 export class GoogleDriveService {
 
-  private CLIENT_ID = "845313346691-8s96unh52t7vq96jfpf0os8b8q37c9qr.apps.googleusercontent.com";
-  private API_KEY = "AIzaSyBAjqEjqJQZFUodaZcImYzKmg3gpq-V49w";
+  private CLIENT_ID = "";
+  private API_KEY = "";
   private DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
   private SCOPES = 'https://www.googleapis.com/auth/drive.file';
   http = inject(HttpClient);
