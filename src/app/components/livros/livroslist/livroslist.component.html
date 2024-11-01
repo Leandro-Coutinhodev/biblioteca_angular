@@ -1,0 +1,34 @@
+<div class="align-center">
+  <h3>Lista de livros:</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Título</th>
+          <th scope="col">Autor(es)</th>
+          <th scope="col">Editora</th>
+          <th scope="col">Ano</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let livro of lista">
+          <td>{{livro.id}}</td>
+          <td>{{livro.titulo}}</td>
+          <td>
+            <ng-container *ngFor="let autor of livro.autores; let last = last">
+              {{autor.nome}}<span *ngIf="!last">, </span>
+            </ng-container>
+          </td>
+          <td>{{livro.editora}}</td>
+          <td>{{livro.ano}}</td>
+          <td>
+          <button type="button" class="btn btn-success" mdbRipple routerLink="/admin/livros/edit/{{livro.id}}">Editar</button>
+<button type="button" class="btn btn-danger" mdbRipple (click)="delete(livro.id)">Deletar</button>
+</td>
+        </tr>
+      </tbody>
+      <button type="button" class="btn btn-dark" mdbRipple routerLink="/admin/livros/new">Novo</button>
+    </table>
+  </div>
+  

@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-lg-12 d-flex justify-content-center">
+      <div class="card text-white" style="background-color: #000; width: 33rem;">
+        <div class="card-body">
+          <h5 class="card-title">Cadastro de livros:</h5>
+          <mdb-form-control class="form-white d-flex" style="width: 30rem;">
+            <input mdbInput type="text" id="titulo" class="form-control" [(ngModel)]="livro.titulo"/>
+            <label mdbLabel class="form-label" for="titulo">Título</label>
+          </mdb-form-control>
+          <br>
+          <mdb-form-control class="form-white" style="width: 30rem;">
+            <input mdbInput type="text" id="editora" class="form-control" [(ngModel)]="livro.editora"/>
+            <label mdbLabel class="form-label" for="editora">Editora</label>
+          </mdb-form-control>
+          <br>
+          <mdb-form-control class="form-white" style="width: 30rem;">
+            <input mdbInput type="number" id="ano" class="form-control" [(ngModel)]="livro.ano"/>
+            <label mdbLabel class="form-label" for="ano">Ano</label>
+          </mdb-form-control>
+          <br>
+          <mdb-form-control class="form-white" style="width: 30rem;">
+          <input mdbInput type="text" id="imagem" class="form-control" [(ngModel)]="livro.imagem"/>
+          <label mdbLabel class="form-label" for="imagem">Imagem</label>
+        </mdb-form-control>
+        <br>
+          <mdb-form-control class="form-white" style="width: 30rem;">
+          <input mdbInput type="text" id="autores" class="form-control" [(ngModel)]="autorSearch" placeholder="Pesquise autores..." (input)="onSearch()"/>
+          <label mdbLabel class="form-label" for="autores">Autores</label>
+
+          <ul class="suggestions-list" *ngIf="showSuggestions">
+            <li *ngFor="let autor of autoresFiltrados" (click)="selectAutor(autor)">{{autor.nome}}</li>
+          </ul>
+
+          <div class="selected-authors">
+            <span *ngFor="let autor of livro.autores" class="autor-chip">
+              {{autor.nome}}<span (click)="removerAutor(autor)">x</span>
+            </span>
+          </div>
+          </mdb-form-control>
+          <br>
+          <button type="button" class="btn btn-dark" mdbRipple (click)="salvar()">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

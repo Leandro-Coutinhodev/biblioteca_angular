@@ -1,0 +1,30 @@
+<div class="align-center">
+  <h3>Lista de usuários:</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Idade</th>
+          <th scope="col">Celular</th>
+          <th scope="col">Email</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of lista">
+          <td>{{usuario.id}}</td>
+          <td>{{usuario.nome}}</td>
+          <td>{{usuario.idade}}</td>
+          <td>{{usuario.celular}}</td>
+          <td>{{usuario.email}}</td>
+          <td>
+          <button type="button" class="btn btn-success" mdbRipple routerLink="/admin/usuarios/edit/{{usuario.id}}">Editar</button>
+<button type="button" class="btn btn-danger" mdbRipple (click)="delete(usuario.id)">Deletar</button>
+</td>
+        </tr>
+      </tbody>
+      <button type="button" class="btn btn-dark" mdbRipple routerLink="/admin/usuarios/new">Novo</button>
+    </table>
+  </div>
+  

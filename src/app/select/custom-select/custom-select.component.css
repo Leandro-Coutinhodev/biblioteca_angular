@@ -1,0 +1,34 @@
+.custom-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select {
+  background-color: #000; /* Fundo preto */
+  color: #fff; /* Cor do texto */
+  border: 1px solid #ccc; /* Borda padrão */
+  padding: 12px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer;
+  min-height: 36px; /* Altura mínima do select */
+  display: block; /* Para ocupar 100% do contêiner */
+  width: 100%; /* Para garantir que o select ocupe toda a largura */
+}
+
+.select-label {
+  color: #ffffff; /* Cor da label */
+  position: absolute;
+  left: 9px; /* Posição à esquerda */
+  top: 5px; /* Posição inicial */
+  background-color: #000; /* Fundo da label igual ao do campo */
+  padding: 0 4px; /* Margem lateral para a label */
+  font-size: 1em; /* Tamanho da fonte da label */
+  transition: 0.2s ease; /* Animação de transição */
+  pointer-events: none; /* A label não deve ser clicável */
+}
+
+.select-label.active {
+  top: -8px; /* Posição da label quando ativa */
+  font-size: 0.85em; /* Tamanho reduzido quando ativa */
+  color: #ffffff; /* Cor da label quando ativa */
+}

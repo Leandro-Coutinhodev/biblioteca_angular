@@ -1,0 +1,17 @@
+<div class="custom-select-container">
+  <div class="custom-select-container">
+    <select 
+    class="custom-select" 
+    [(ngModel)]="selectedValue" 
+    (ngModelChange)="onSelectChange()"
+    (focus)="showLabel()" 
+    (blur)="hideLabel()">
+    <option *ngFor="let usuario of usuarios" [ngValue]="usuario">
+      {{ usuario.nome }}
+    </option>
+    </select>
+  <label class="select-label" 
+         [class.active]="selectedValue || selectedValue === ''">
+    {{ selectedValue ? 'Usuário solicitante' : 'Usuário solicitante' }}
+  </label>
+</div>

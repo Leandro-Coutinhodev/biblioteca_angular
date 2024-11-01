@@ -1,0 +1,45 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000; /* Azul escuro */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar .fs-4 {
+  color: #ecf0f1; /* Branco suave */
+}
+
+.nav-link {
+  color: #ffffff; /* Cinza claro */
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #000;
+}
+
+.nav-link.active {
+  background-color: white; /* Verde suave */
+  color: #000;
+}
+
+.nav-link:hover {
+  background-color: white; /* Verde mais vibrante */
+  color: #000;
+}
+
+hr {
+  border-color: #7f8c8d; /* Cinza escuro */
+}
+
+.dropdown a {
+  color: #ecf0f1; /* Branco suave */
+  text-align: left;
+}
+
+.dropdown a:hover {
+  color: rgb(242, 246, 246); /* Verde mais vibrante */
+}

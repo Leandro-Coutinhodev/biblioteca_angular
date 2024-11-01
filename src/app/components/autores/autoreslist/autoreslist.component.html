@@ -1,0 +1,26 @@
+<div class="align-center">
+  <h3>Lista de autores:</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Idade</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let autor of lista">
+          <td>{{autor.id}}</td>
+          <td>{{autor.nome}}</td>
+          <td>{{autor.idade}}</td>
+          <td>
+          <button type="button" class="btn btn-success" mdbRipple routerLink="/admin/autores/edit/{{autor.id}}">Editar</button>
+<button type="button" class="btn btn-danger" mdbRipple (click)="delete(autor.id)">Deletar</button>
+</td>
+        </tr>
+      </tbody>
+      <button type="button" class="btn btn-dark" mdbRipple routerLink="/admin/autores/new">Novo</button>
+    </table>
+  </div>
+  
